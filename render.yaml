@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: pansou
+    env: docker
+    plan: free
+    dockerCommand: |
+      docker run -d --name pansou -p 3000:80 ghcr.io/fish2018/pansou-web
+    healthCheckPath: /
+    ports:
+      - 3000
